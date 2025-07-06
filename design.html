@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Designer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfcf9;
+    }
+
+    .header {
+      padding: 12px 16px;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .designer-container {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .tshirt-container {
+      width: 90vw;
+      max-width: 360px;
+      aspect-ratio: 220 / 260;
+      margin: 0 auto 12px;
+      background-color: white; /* default shirt background */
+      background-image: url('white-tshirt.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .color-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+      margin-top: 16px;
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #ff6b00;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      background-color: #e35e00;
+    }
+
+    .sticker-heading {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .sticker-area {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 12px;
+      padding: 16px;
+      max-width: 320px;
+      margin: 12px auto 40px;
+      background-color: #fffbe7;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+    }
+
+    .sticker-area img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      object-fit: cover;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">🎨 Create Your T-Shirt</div>
+
+  <div class="designer-container">
+    <div class="tshirt-container" id="tshirt-preview"></div>
+
+    <div class="controls">
+      <div class="color-circle" style="background-color: black;" onclick="changeColor('black')"></div>
+      <div class="color-circle" style="background-color: white; border: 1px solid #ccc;" onclick="changeColor('white')"></div>
+      <div class="color-circle" style="background-color: red;" onclick="changeColor('red')"></div>
+      <div class="color-circle" style="background-color: blue;" onclick="changeColor('blue')"></div>
+      <div class="color-circle" style="background-color: yellow;" onclick="changeColor('yellow')"></div>
+    </div>
+
+    <button class="btn">Add Your Design</button>
+
+    <div class="sticker-heading">OUR DESIGNS</div>
+
+    <div class="sticker-area">
+      <img src="sticker1.png" alt="Sticker 1">
+      <img src="sticker2.png" alt="Sticker 2">
+      <img src="sticker3.png" alt="Sticker 3">
+      <img src="sticker4.png" alt="Sticker 4">
+      <img src="sticker5.png" alt="Sticker 5">
+      <img src="sticker6.png" alt="Sticker 6">
+      <img src="sticker7.png" alt="Sticker 7">
+      <img src="sticker8.png" alt="Sticker 8">
+    </div>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      const tshirt = document.getElementById('tshirt-preview');
+      tshirt.style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>
